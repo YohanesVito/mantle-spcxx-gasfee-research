@@ -281,13 +281,17 @@ def main():
         d.add_paragraph(b, style="List Bullet")
 
     # ---------- Repro ----------
-    kicker("REPRODUCIBILITY")
-    para("All swaps, fees, blocks and capacity metrics are reconstructed from Mantle public RPC "
-         "(chainId 5000) and Nasdaq data; scripts and raw CSVs accompany this report. Re-running the pipeline on "
-         "the latest blocks reproduces every figure and statistic. Cited context: SpaceX IPO and tokenized-stock "
-         "allocation coverage (CoinDesk, CNBC, The Block, Chainwire); Mantle fee mechanism (Mantle Docs); RWA TVL "
-         "+27% to $247.5M (Mantle Q1 2026 ecosystem report). Full links in the companion repository.",
-         color=GREY, size=10)
+    kicker("CODE & DATA AVAILABILITY")
+    para("All code, raw datasets, and figures are open and fully reproducible: "
+         "https://github.com/YohanesVito/mantle-spcxx-gasfee-research . Everything is reconstructed from Mantle "
+         "public RPC (chainId 5000) and Nasdaq daily closes, with no API keys required. Running "
+         "scripts/poll.sh then scripts/build_report.sh regenerates the complete analysis and every figure; the "
+         "pipeline is deterministic from block numbers, so a fresh run on the same window reproduces identical "
+         "results.", color=GREY, size=10)
+    kicker("SOURCES")
+    para("Background facts verified against CoinDesk, CNBC, The Block, and Chainwire; the Mantle fee mechanism "
+         "from Mantle Docs; RWA TVL (+27% to $247.5M) from Mantle's Q1 2026 ecosystem report. Full links in the "
+         "repository README.", color=GREY, size=10)
     para("Auto-generated from the research data pipeline. Re-run scripts/make_docx.py to refresh with the latest "
          "data.", italic=True, color=GREY, size=9)
 
