@@ -1,0 +1,151 @@
+{
+  "window": {
+    "swaps": 362,
+    "hours_with_trades": 113,
+    "from": "2026-06-12 18:35:22+00:00",
+    "to": "2026-07-01 17:22:58+00:00"
+  },
+  "RQ1_price_convergence": {
+    "note": "SPCXx daily on-chain VWAP vs SPCX Nasdaq daily close. Reports co-movement + dispersion only; intraday premium and convergence significance intentionally NOT claimed (see limitations).",
+    "matched_days": 13,
+    "price_comovement_r": 0.905,
+    "mean_abs_premium_pct": 3.39,
+    "median_abs_premium_pct": 2.11,
+    "premium_range_pct": [
+      -7.97,
+      10.54
+    ],
+    "onchain_price_range": [
+      152.85,
+      206.94
+    ],
+    "nasdaq_price_range": [
+      153.0,
+      211.39
+    ]
+  },
+  "RQ2_event_volatility": {
+    "cut": "2026-06-13 12:00:00+00:00",
+    "n_pre": 6,
+    "n_post": 106,
+    "vol_pre": 0.02243,
+    "vol_post": 0.01806,
+    "levene_p": 0.7979
+  },
+  "RQ3_fee_drivers": {
+    "stationarity": [
+      {
+        "var": "fee_total",
+        "n": 113,
+        "adf_stat": -9.636,
+        "pvalue": 0.0,
+        "stationary": true
+      },
+      {
+        "var": "fee_l1",
+        "n": 113,
+        "adf_stat": -6.679,
+        "pvalue": 0.0,
+        "stationary": true
+      },
+      {
+        "var": "volume",
+        "n": 113,
+        "adf_stat": -4.116,
+        "pvalue": 0.0009,
+        "stationary": true
+      },
+      {
+        "var": "l1_gas_price_gwei",
+        "n": 113,
+        "adf_stat": -7.453,
+        "pvalue": 0.0,
+        "stationary": true
+      },
+      {
+        "var": "eff_gas",
+        "n": 113,
+        "adf_stat": -5.742,
+        "pvalue": 0.0,
+        "stationary": true
+      }
+    ],
+    "correlations": {
+      "fee_total~l1_gas": {
+        "n": 113,
+        "pearson": 0.098,
+        "pearson_p": 0.3038,
+        "spearman": 0.307
+      },
+      "fee_total~volume": {
+        "n": 113,
+        "pearson": 0.101,
+        "pearson_p": 0.287,
+        "spearman": 0.195
+      },
+      "fee_l1~l1_gas": {
+        "n": 113,
+        "pearson": 0.546,
+        "pearson_p": 0.0,
+        "spearman": 0.801
+      },
+      "d_fee_total~d_l1_gas": {
+        "n": 112,
+        "pearson": 0.037,
+        "pearson_p": 0.6948,
+        "spearman": 0.131
+      },
+      "d_fee_total~d_volume": {
+        "n": 112,
+        "pearson": 0.134,
+        "pearson_p": 0.1593,
+        "spearman": 0.177
+      }
+    },
+    "regression": {
+      "note": "OLS d_fee_total ~ d_l1_gas + d_volume, Newey-West HAC SE",
+      "n": 112,
+      "r2": 0.019,
+      "coef": {
+        "const": 0.00012146,
+        "l1_gas_price_gwei": 0.00146214,
+        "volume": 8.3e-07
+      },
+      "pvalues": {
+        "const": 0.8438,
+        "l1_gas_price_gwei": 0.3901,
+        "volume": 0.0044
+      },
+      "vif": {
+        "l1_gas_price_gwei": 1.0,
+        "volume": 1.0
+      }
+    },
+    "stability": {
+      "fee_total_mean": 0.023914,
+      "fee_total_cv": 0.3211,
+      "l1_share_pct": 2.358
+    }
+  },
+  "RQ4_block_fullness": {
+    "utilization~volume": {
+      "n": 113,
+      "pearson": -0.097,
+      "pearson_p": 0.3059,
+      "spearman": -0.069
+    },
+    "avg_tx_count~volume": {
+      "n": 113,
+      "pearson": -0.13,
+      "pearson_p": 0.1702,
+      "spearman": 0.004
+    },
+    "avg_gas_used~trades": {
+      "n": 113,
+      "pearson": -0.005,
+      "pearson_p": 0.9617,
+      "spearman": 0.086
+    },
+    "util_mean_pct": 0.2958
+  }
+}

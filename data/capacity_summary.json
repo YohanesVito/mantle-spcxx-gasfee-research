@@ -1,0 +1,22 @@
+{
+  "window_blocks": [
+    96575448,
+    97430450
+  ],
+  "method": "census via eth_feeHistory gasUsedRatio",
+  "blocks_in_census": 13312,
+  "block_gas_limit": 60000000,
+  "block_time_s": 2.0,
+  "capacity_gas_per_s": 30000000.0,
+  "utilization_pct_census_mean": 0.1909,
+  "utilization_pct_census_median": 0.0772,
+  "utilization_pct_block_peak": 8.2306,
+  "utilization_pct_hourly_mean": 0.2399,
+  "headroom_pct_mean": 99.8091,
+  "headroom_pct_at_peak": 91.7694,
+  "tx_per_block_mean": 1,
+  "avg_gas_per_tx": 114534,
+  "current_tps": 0.5,
+  "max_tps_at_current_profile": 262,
+  "max_tps_simple_transfer_21k": 1429
+}
